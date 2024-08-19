@@ -14,10 +14,4 @@ class Comida_personaje():
         filas = random.randint(1,7)
         fruta = mundo.mapa_culebrita.tablero[columnas][filas] = manzana.comida
         fruta
-        if fruta in mundo.mapa_culebrita.tablero[1:7][1:7]:
-            print("Ejecucion 1")
-            fruta
-        # if mundo.mapa_culebrita.tablero[columnas][filas] == fruta:
-        #     print("Ejecucion 2")
-        #     fruta
 manzana = Comida_personaje(comida="🍎")

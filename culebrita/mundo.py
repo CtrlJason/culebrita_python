@@ -1,5 +1,4 @@
 #librerias
-
 # Mapa donde estara el jugador
 class Mapa():
     def __init__(self, tablero):

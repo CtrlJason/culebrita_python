@@ -1,8 +1,9 @@
 #Modulos
 import mundo, obj_comida, vista_juego, time, keyboard # Para pausar el tiempo de ejecucion de una seccion del codigo
 # Variables
-jugador = mundo.mapa_culebrita.tablero
 
+jugador = mundo.mapa_culebrita.tablero
+posicion_comida = obj_comida.manzana.posicion_fruta()
 class Personaje():
     def __init__(self, sprite):
         self.sprite = sprite
@@ -57,12 +58,11 @@ class Personaje():
                 pasos_y += 0
                 pasos_x -= 1
                 jugador[pasos_y][pasos_x] = culebrita.sprite
-                jugador[pasos_y][pasos_x+1] = "🟦"     
-            vista_juego.vista()
+                jugador[pasos_y][pasos_x+1] = "🟦"
             if pasos_y == 8 or pasos_y == 0 or pasos_x == 8 or pasos_x == 0:
                 print("Has perdido")
                 jugador[pasos_y][pasos_x] = "🟥" 
                 break
+            vista_juego.vista()
             time.sleep(0.6)
 culebrita = Personaje(sprite="⬜")
-print(culebrita.sprite)

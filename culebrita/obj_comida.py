@@ -13,5 +13,10 @@ class Comida_personaje():
         columnas = random.randint(1,7)
         filas = random.randint(1,7)
         fruta = mundo.mapa_culebrita.tablero[columnas][filas] = manzana.comida
+        self.posicion = [[columnas],[filas]]
         fruta
+    def guardado(self):
+        self.posicion
+        return self.posicion
 manzana = Comida_personaje(comida="🍎")
+print()

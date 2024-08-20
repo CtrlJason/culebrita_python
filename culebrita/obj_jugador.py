@@ -92,6 +92,6 @@ class Personaje():
             vista_juego.vista()
             # Puntaje
             print(f"Puntos: {puntos}")
-            time.sleep(0.6)
+            time.sleep(0.5)
         
 culebrita = Personaje(sprite="⬜")

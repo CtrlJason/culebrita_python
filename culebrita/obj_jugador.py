@@ -39,7 +39,6 @@ class Personaje():
                 w_line
             # guardamos el puntaje actual del jugador para que no se ejecute el condicional [CONDUNCIONAL 3]
             puntos_anteriores = puntos
-            print(list_pos_y, list_pos_x)
             count += 1
             if keyboard.is_pressed("w") and not keyboard.is_pressed("s") and not ultima_tecla == "s": # Movimiento arriba
                 pasos_y -= 1
@@ -90,6 +89,9 @@ class Personaje():
                 puntos += 1
                 count_s += 1
                 # Al hacer mas grande la lista el tamaño de la serpiente aumenta
+            # coordenadas_cola = list(zip(list_pos_y, list_pos_x)) # almacenamos las listas en una tupla y las agrupamos con la funcion zip para su posterior comparacion
+            # if (columna, fila) in coordenadas_cola: ## Pendiente
+            #     obj_comida.manzana.posicion_fruta()
             vista_juego.vista()
             # Puntaje
             print(f"Puntos: {puntos}")

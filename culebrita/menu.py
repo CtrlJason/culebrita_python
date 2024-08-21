@@ -11,3 +11,4 @@ while True:
         break
     else:
         print("Elije una opcion valida\n")
+        # Queda pendiente: 1. Jugador se toca asi mismo, pierde 2. Manzana no puede aparecer encima del jugador

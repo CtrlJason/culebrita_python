@@ -100,21 +100,28 @@ class Personaje():
                 pasos_x -= 1
                 jugador[pasos_y][pasos_x] = culebrita.sprite
             #---------------------------------------------------------------------#
+            posicion = [[pasos_y],[pasos_x]]
+            posicion2 = obj_comida.manzana.guardado()
+            #---------------------------------------------------------------------#
             if pasos_y == 8 or pasos_y == 0 or pasos_x == 8 or pasos_x == 0:
                 winsound.PlaySound(ruta_sonido_perder, winsound.SND_FILENAME) # Para ejecutar o iniciar el sonido
-                clean()
-                print("\nHas perdido\n")
+                obj_comida.manzana.limpiado()
+                for i in range(puntos):
+                    jugador[list_pos_y[i]][list_pos_x[i]] = "🟦"
+                jugador[list_pos_y[-1]][list_pos_x[-1]] = "🟦"
                 jugador[pasos_y][pasos_x] = "🟥"
+                print("\nHas perdido\n")
                 break
             #---------------------------------------------------------------------#
             if (pasos_y, pasos_x) in zip(list_pos_y, list_pos_x):
                 winsound.PlaySound(ruta_sonido_perder, winsound.SND_FILENAME)
-                clean()
+                obj_comida.manzana.limpiado()
+                for i in range(puntos):
+                    jugador[list_pos_y[i-1]][list_pos_x[i-1]] = "🟦"
+                jugador[list_pos_y[-1]][list_pos_x[-1]] = "🟦"
+                jugador[pasos_y][pasos_x] = "🟦"
                 print("\nHas perdido\n")
                 break
-            #---------------------------------------------------------------------#
-            posicion = [[pasos_y],[pasos_x]]
-            posicion2 = obj_comida.manzana.guardado()
             #---------------------------------------------------------------------#
             # Verificador de posicion de jugador y fruta
             if posicion == posicion2:

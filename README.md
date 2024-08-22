@@ -5,7 +5,7 @@ Este proyecto es una versión del clásico juego de la culebrita, implementado e
 ## Características 🚀
 
 - **Juego en consola:** Todo el juego se desarrolla en la consola.
-- **Iniciar juego:** Para jugar debes de ejecutar el run python file si usas visual studio con el nombre |- start_game.py -|
+- **Iniciar juego:** Para jugar debes de ejecutar el run python file si usas visual studio con el nombre - start_game.py -
 - **Control simple:** Utiliza las teclas de dirección (`W`, `A`, `S`, `D`) para mover la culebrita.
 - **Crecimiento progresivo:** Cada vez que la culebrita come, su longitud aumenta.
 - **Detección de colisiones:** Si la culebrita choca con los bordes de la pantalla o con su propio cuerpo, el juego termina.

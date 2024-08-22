@@ -1,11 +1,19 @@
 #Modulos
-import mundo, obj_comida, vista_juego, time, keyboard, winsound # Para pausar el tiempo de ejecucion de una seccion del codigo
+import mundo, obj_comida, vista_juego, time, keyboard, winsound, os # Para pausar el tiempo de ejecucion de una seccion del codigo
 from pathlib import Path
 # Variables
 jugador = mundo.mapa_culebrita.tablero
 #Sonidos
 ruta_sonido_comer = Path(__file__).parent/"sonidos/comer.wav" # En este caso se utiliza Path(__file__).parent/ para obtener la ubicacion de un archivo y viajar entre carpetas atravez de un "/"
 ruta_sonido_perder = Path(__file__).parent/"sonidos/perder.wav"
+
+def clean():
+    # Para Windows
+    if os.name == 'nt':
+        os.system('cls')
+    # Para Unix/Linux/Mac
+    else:
+        os.system('clear')
 
 class Personaje():
     def __init__(self, sprite):
@@ -94,12 +102,14 @@ class Personaje():
             #---------------------------------------------------------------------#
             if pasos_y == 8 or pasos_y == 0 or pasos_x == 8 or pasos_x == 0:
                 winsound.PlaySound(ruta_sonido_perder, winsound.SND_FILENAME) # Para ejecutar o iniciar el sonido
+                clean()
                 print("\nHas perdido\n")
                 jugador[pasos_y][pasos_x] = "🟥"
                 break
             #---------------------------------------------------------------------#
             if (pasos_y, pasos_x) in zip(list_pos_y, list_pos_x):
                 winsound.PlaySound(ruta_sonido_perder, winsound.SND_FILENAME)
+                clean()
                 print("\nHas perdido\n")
                 break
             #---------------------------------------------------------------------#

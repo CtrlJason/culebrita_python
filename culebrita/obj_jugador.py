@@ -6,8 +6,6 @@ jugador = mundo.mapa_culebrita.tablero
 #Sonidos
 ruta_sonido_comer = Path(__file__).parent/"sonidos/comer.wav" # En este caso se utiliza Path(__file__).parent/ para obtener la ubicacion de un archivo y viajar entre carpetas atravez de un "/"
 ruta_sonido_perder = Path(__file__).parent/"sonidos/perder.wav"
-sond_comer = winsound.PlaySound(ruta_sonido_comer, winsound.SND_FILENAME)
-sond_perder = winsound.PlaySound(ruta_sonido_perder, winsound.SND_FILENAME)
 
 class Personaje():
     def __init__(self, sprite):
@@ -95,13 +93,13 @@ class Personaje():
                 jugador[pasos_y][pasos_x] = culebrita.sprite
             #---------------------------------------------------------------------#
             if pasos_y == 8 or pasos_y == 0 or pasos_x == 8 or pasos_x == 0:
-                sond_perder # Para ejecutar o iniciar el sonido
+                winsound.PlaySound(ruta_sonido_perder, winsound.SND_FILENAME) # Para ejecutar o iniciar el sonido
                 print("\nHas perdido\n")
                 jugador[pasos_y][pasos_x] = "🟥"
                 break
             #---------------------------------------------------------------------#
             if (pasos_y, pasos_x) in zip(list_pos_y, list_pos_x):
-                sond_perder
+                winsound.PlaySound(ruta_sonido_perder, winsound.SND_FILENAME)
                 print("\nHas perdido\n")
                 break
             #---------------------------------------------------------------------#
@@ -110,14 +108,14 @@ class Personaje():
             #---------------------------------------------------------------------#
             # Verificador de posicion de jugador y fruta
             if posicion == posicion2:
-                sond_comer # Para ejecutar o iniciar el sonido
+                winsound.PlaySound(ruta_sonido_comer, winsound.SND_FILENAME) # Para ejecutar o iniciar el sonido
                 obj_comida.manzana.posicion_fruta()
                 puntos += 1
                 count_s += 1
             #---------------------------------------------------------------------#
             vista_juego.vista()
             # Puntaje
-            print(f"Puntos: {puntos}")
+            print(f"Puntos: {puntos}\n")
             time.sleep(0.34)
         
 culebrita = Personaje(sprite="🟧")

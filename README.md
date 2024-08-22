@@ -8,7 +8,7 @@ Este proyecto es una versión del clásico juego de la culebrita, implementado e
 - **Iniciar juego:** Para jugar debes de ejecutar el run python file si usas visual studio con el nombre - start_game.py -
 - **Control simple:** Utiliza las teclas de dirección (`W`, `A`, `S`, `D`) para mover la culebrita.
 - **Crecimiento progresivo:** Cada vez que la culebrita come, su longitud aumenta.
-- **Detección de colisiones:** Si la culebrita choca con los bordes de la pantalla o con su propio cuerpo, el juego termina.
+- **Detección de colisiones:** Si la culebrita choca con los bordes del tablero o con su propio cuerpo, el juego termina.
 - **Sonido:** Se reproduce un sonido cada vez que la culebrita come una manzana.
 
 ## Requisitos del Sistema 🛠️
